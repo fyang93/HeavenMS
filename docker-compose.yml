@@ -7,7 +7,7 @@ services:
       - db
     environment:
       WAIT_HOSTS: localhost:3306
-    
+
   db:
     network_mode: "host"
     image: mysql:5.6

@@ -141,3 +141,5 @@
 
 /out
 *.onetoc2
+
+backup.sql

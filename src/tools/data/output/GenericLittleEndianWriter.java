@@ -23,7 +23,8 @@ package tools.data.output;
 
 import java.awt.Point;
 import java.nio.charset.Charset;
-import constants.string.CharsetConstants.MapleLanguageType;
+// import constants.string.CharsetConstants.MapleLanguageType;\
+import tools.StringUtil;
 
 /**
  * Provides a generic writer of a little-endian sequence of bytes.
@@ -33,7 +34,8 @@ import constants.string.CharsetConstants.MapleLanguageType;
  * @since Revision 323
  */
 public class GenericLittleEndianWriter implements LittleEndianWriter {
-    private static Charset ASCII = Charset.forName(MapleLanguageType.LANGUAGE_US.getAscii());
+    // private static Charset ASCII = Charset.forName(MapleLanguageType.LANGUAGE_US.getAscii());
+    private static Charset ASCII = Charset.forName("GB2312");
     private ByteOutputStream bos;
 
     /**
@@ -130,7 +132,8 @@ public class GenericLittleEndianWriter implements LittleEndianWriter {
      */
     @Override
     public void writeMapleAsciiString(String s) {
-        writeShort((short) s.length());
+        // writeShort((short) s.length());
+        writeShort((short) s.getBytes(ASCII).length);
         writeAsciiString(s);
     }
 

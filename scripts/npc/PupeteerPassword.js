@@ -28,7 +28,7 @@ function action(mode, type, selection){
 		cm.sendGetText("A suspicious voice pierces through the silence. #bPassword#k!");
 	}
 	else if(status == 1){
-                if(cm.getText() == "Francis is a genius Puppeteer!"){
+                if(cm.getText() == "Francis is a genius puppeteer!"){
 			if(cm.isQuestStarted(20730) && cm.getQuestProgressInt(20730, 9300285) == 0)
 				cm.warp(910510001, 1);
                         else if(cm.isQuestStarted(21731) && cm.getQuestProgressInt(21731, 9300346) == 0)

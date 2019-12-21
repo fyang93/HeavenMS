@@ -22,6 +22,20 @@
 package tools;
 
 public class StringUtil {
+        public static int getLength(String in) {
+            int i, t = 0;
+            byte[] bt = in.getBytes();
+            for (i = 1; i <= bt.length; i++) {
+                if (bt[i - 1] < 0) {
+                    t = t + 2;
+                    i++;
+                } else {
+                    t = t + 1;
+                }
+            }
+            return t;
+        }
+    
 	/**
 	 * Gets a string padded from the left to <code>length</code> by
 	 * <code>padchar</code>.
@@ -33,13 +47,14 @@ public class StringUtil {
 	 */
 	public static String getLeftPaddedStr(String in, char padchar, int length) {
 		StringBuilder builder = new StringBuilder(length);
-		for (int x = in.length(); x < length; x++) {
+		// for (int x = in.length(); x < length; x++) {
+                for (int x = getLength(in); x < length; x++) {
 			builder.append(padchar);
 		}
 		builder.append(in);
 		return builder.toString();
 	}
-
+        
 	/**
 	 * Gets a string padded from the right to <code>length</code> by
 	 * <code>padchar</code>.
@@ -51,7 +66,8 @@ public class StringUtil {
 	 */
 	public static String getRightPaddedStr(String in, char padchar, int length) {
 		StringBuilder builder = new StringBuilder(in);
-		for (int x = in.length(); x < length; x++) {
+		// for (int x = in.length(); x < length; x++) {
+                for (int x = getLength(in); x < length; x++) {
 			builder.append(padchar);
 		}
 		return builder.toString();

@@ -999,7 +999,8 @@ public class MapleCharacter extends AbstractMapleCharacterObject {
                 return false;
             }
         }
-        return getIdByName(name) < 0 && Pattern.compile("[a-zA-Z0-9]{3,12}").matcher(name).matches();
+        // return getIdByName(name) < 0 && Pattern.compile("[a-zA-Z0-9]{3,12}").matcher(name).matches();
+        return getIdByName(name) < 0 && Pattern.compile("[a-z\\p{InCJKUnifiedIdeographs}A-Z0-9_-]{3,12}").matcher(name).matches();
     }
 
     public boolean canDoor() {
@@ -10690,7 +10691,8 @@ public class MapleCharacter extends AbstractMapleCharacterObject {
     }
 
     public boolean getWhiteChat() {
-    	return !isGM() ? false : whiteChat;
+    	// return !isGM() ? false : whiteChat;
+        return false;
     }
 
     public void toggleWhiteChat() {
