@@ -951,7 +951,8 @@ public class MapleItemInformationProvider {
                     break;
                 }
 
-                if(assertGM || rollSuccessChance(prop)) {
+                // if(assertGM || rollSuccessChance(prop)) {
+                if(isGM || rollSuccessChance(prop)) {
                     short flag = nEquip.getFlag();
                     switch (scrollId) {
                         case 2040727:

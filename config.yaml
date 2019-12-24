@@ -338,7 +338,7 @@ server:
 
     #Some Gameplay Enhancing Configurations
     #Scroll Configuration
-    USE_PERFECT_GM_SCROLL: true     #Scrolls from GMs never uses up slots nor fails.
+    USE_PERFECT_GM_SCROLL: false    #Scrolls from GMs never uses up slots nor fails.
     USE_PERFECT_SCROLLING: true     #Scrolls doesn't use slots upon failure.
     USE_ENHANCED_CHSCROLL: true     #Equips even more powerful with chaos upgrade.
     USE_ENHANCED_CRAFTING: true     #Apply chaos scroll on every equip crafted.
@@ -423,7 +423,7 @@ server:
 
     #Pet Hunger Configuration
     PETS_NEVER_HUNGRY: false        #If true, pets and mounts will never grow hungry.
-    GM_PETS_NEVER_HUNGRY: true      #If true, pets and mounts owned by GMs will never grow hungry.
+    GM_PETS_NEVER_HUNGRY: false     #If true, pets and mounts owned by GMs will never grow hungry.
 
     #Event Configuration
     EVENT_MAX_GUILD_QUEUE: 10           #Max number of guilds in queue for GPQ.
