@@ -35,7 +35,7 @@ import tools.StringUtil;
  */
 public class GenericLittleEndianWriter implements LittleEndianWriter {
     // private static Charset ASCII = Charset.forName(MapleLanguageType.LANGUAGE_US.getAscii());
-    private static Charset ASCII = Charset.forName("GB2312");
+    private static Charset ASCII = Charset.forName("GBK");
     private ByteOutputStream bos;
 
     /**

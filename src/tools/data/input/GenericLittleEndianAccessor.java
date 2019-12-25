@@ -135,7 +135,7 @@ public class GenericLittleEndianAccessor implements LittleEndianAccessor {
             for (int x = 0; x < n; x++) {
                 ret[x] = readByte();
             }
-            return new String(ret, "GB2312");
+            return new String(ret, "GBK");
         } catch (UnsupportedEncodingException ex) {
             System.err.println(ex);
         }
