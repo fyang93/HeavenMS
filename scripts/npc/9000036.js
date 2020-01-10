@@ -1,19 +1,16 @@
 /*
     This file is part of the HeavenMS MapleStory Server
     Copyleft (L) 2016 - 2019 RonanLana
-
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU Affero General Public License as
     published by the Free Software Foundation version 3 as published by
     the Free Software Foundation. You may not use, modify or distribute
     this program under any other version of the GNU Affero General Public
     License.
-
     This program is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU Affero General Public License for more details.
-
     You should have received a copy of the GNU Affero General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
@@ -47,7 +44,7 @@ function start() {
     
     cm.getPlayer().setCS(true);
     var selStr = "Hello, I am the #bAccessory NPC Crafter#k! My works are widely recognized to be too fine, up to the point at which all my items mimic not only the appearance but too the attributes of them! Everything I charge is some 'ingredients' to make them and, of course, a fee for my services. On what kind of equipment are you interessed?#b";
-    var options = ["Pendants","Face accessories","Eye accessories","Belts & medals","Rings"/*,"#t4032496#"*/];
+    var options = ["Pendants","Face accessories","Eye accessories","Belts & medals","Rings","Strengthe..."/*,"#t4032496#"*/];
     for (var i = 0; i < options.length; i++)
         selStr += "\r\n#L" + i + "# " + options[i] + "#l";
     cm.sendSimple(selStr);
@@ -100,6 +97,13 @@ function action(mode, type, selection) {
             for (var i = 0; i < items.length; i++)
                 selStr += "\r\n#L" + i + "##t" + items[i] + "##b";
             
+        }else if(selection ==5){//Crystals
+        	var selStr = "Want to process your diamonds or black crystals?#b";
+        	items = [4250002, 4250102, 4250202, 4250302, 4250402, 4250502, 4250602, 4250702, 4250802, 4250902, 4251002, 4251102, 4251302, 4251402];
+
+        	for (var i = 0; i < items.length; i++)
+        		selStr += "\r\n#L" + i + "##t" + items[i] + "##b";
+
         }/*else if (selection == 5) { //make necklace
             var selStr = "Need to make #t4032496#?#b";
             items = [4032496];
@@ -131,6 +135,10 @@ function action(mode, type, selection) {
             var matSet = [[4003001, 4001344, 4006000], [4003001, 4001344, 4006000], [4021004, 4011008], [4011008, 4001006], [1112413, 2022039], [1112414, 4000176], [4011007, 4021009]];
             var matQtySet = [[2, 2, 2], [2, 2, 2], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1]];
             var costSet = [10000, 10000, 10000, 20000, 15000, 15000, 10000];
+        }else if (selectedType == 5){
+        	var matSet = [[4021007], [4021005], [4021000], [4021004], [4021001], [4021002], [4021006], [4021003], [4005000], [4005001], [4005003], [4005002], [4021008], [4005004]];
+        	var matQtySet = [[100], [100], [100], [100], [100], [100], [100], [100], [100], [100], [100], [100], [100], [100]];
+        	var costSet = [15000000, 15000000, 15000000, 15000000, 15000000, 15000000, 15000000, 15000000, 15000000, 15000000, 15000000, 15000000, 25000000, 25000000];
         }/*else if (selectedType == 5) { //necklace refine
             var matSet = [[4011007, 4011008, 4021009]];
             var matQtySet = [[1, 1, 1]];

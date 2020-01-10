@@ -924,6 +924,9 @@ public class MapleItemInformationProvider {
         Vicious added in the clean slate check thanks to Crypter (CrypterDEV)
     */
     public boolean canUseCleanSlate(Equip nEquip) {
+        if (nEquip.getLevel() + nEquip.getUpgradeSlots() >= 32) {
+            return false;
+        }
         Map<String, Integer> eqstats = this.getEquipStats(nEquip.getItemId());
         return YamlConfig.config.server.USE_ENHANCED_CLNSLATE || nEquip.getUpgradeSlots() < (byte) (eqstats.get("tuc") + nEquip.getVicious());
     }

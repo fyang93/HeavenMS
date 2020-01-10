@@ -47,12 +47,12 @@ public class MushroomShrine extends GachaponItems {
 
 	@Override
 	public int[] getUncommonItems() {
-		return new int [] {2040811, 2040810, 2040815, 1102041, 1102042, 1082149};
+		return new int [] {2040758, 2040759, 2040811, 2040810, 2040815, 1102041, 1102042, 1082149};
 	}
 
 	@Override
 	public int[] getRareItems() {
-		return new int [] {1102084, 3010019};
+		return new int [] {1102084, 2040760, 3010019};
 	}
 
 }
